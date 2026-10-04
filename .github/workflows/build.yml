@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Android SDK 준비
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       - name: Android SDK 설치
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
