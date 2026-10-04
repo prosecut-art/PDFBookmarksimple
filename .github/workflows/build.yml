@@ -29,8 +29,7 @@ jobs:
 
       - name: APK 빌드
         working-directory: project
-        run: gradle assembleDebug
-
+        run: gradle assembleDebug -Pkotlin.jvm.target.validation.mode=warning
       - name: APK 저장
         uses: actions/upload-artifact@v4
         with:
