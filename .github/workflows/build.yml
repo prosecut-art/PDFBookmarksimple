@@ -26,11 +26,10 @@ jobs:
         run: |
           mkdir -p project
           unzip -o PDFBookmarkSimple_AndroidStudio.zip -d project
-
-      - name: APK 빌드
+          sed -i 's/VERSION_1_8/VERSION_17/g' project/app/build.gradle
+            - name: APK 빌드
         working-directory: project
         run: gradle assembleDebug -Pkotlin.jvm.target.validation.mode=warning
-      - name: APK 저장
         uses: actions/upload-artifact@v4
         with:
           name: PDF-책갈피-APK
